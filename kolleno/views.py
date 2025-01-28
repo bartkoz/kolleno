@@ -2,7 +2,7 @@ from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
-from rest_framework import status, viewsets
+from rest_framework import status, viewsets, mixins
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -11,7 +11,7 @@ from .serializers import URLInfoSerializer, URLPostSerializer
 from .services import ExchangeRateService
 
 
-class URLInfoViewSet(viewsets.ModelViewSet):
+class URLInfoViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.DestroyModelMixin):
     queryset = URLInfo.objects.all()
     serializer_class = URLInfoSerializer
 
