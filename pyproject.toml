@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "kolleno"
+version = "0.1.0"
+description = ""
+authors = ["bartkoz <bartmkoz@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.5"
+djangorestframework = "^3.15.2"
+psycopg2 = "^2.9.10"
+validators = "^0.34.0"
+beautifulsoup4 = "^4.12.3"
+requests = "^2.32.3"
+model-bakery = "^1.20.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
